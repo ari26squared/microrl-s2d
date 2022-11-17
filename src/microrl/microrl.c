@@ -1115,7 +1115,7 @@ microrlr_t microrl_processing_input(microrl_t* mrl, const void* data_ptr, size_t
         if (IS_CONTROL_CHAR(ch)) {
             res = prv_control_char_process(mrl, ch);
         } else {
-            if (((ch == ' ') && (mrl->cmdlen == 0)) || IS_CONTROL_CHAR(ch)) {   /* Skip spaces in first command line symbol or escapes */
+            if ((ch == ' ') && (mrl->cmdlen == 0)) {    /* Skip spaces before first command line symbol */
                 break;
             }
             res = prv_insert_char(mrl, ch);
