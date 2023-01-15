@@ -179,6 +179,7 @@ typedef struct microrl {
 #endif /* MICRORL_CFG_USE_ECHO_OFF || __DOXYGEN__ */
 
     void* userdata_ptr;                         /*!< Generic user data storage */
+    char signal;                                /*!< Last escape character received */
 } microrl_t;
 
 microrlr_t  microrl_init(microrl_t* mrl, microrl_output_fn out_fn, microrl_exec_fn exec_fn);

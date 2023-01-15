@@ -917,7 +917,9 @@ microrlr_t microrl_set_echo(microrl_t* mrl, microrl_echo_t echo) {
  * \return          \ref microrlOK on success, member of \ref microrlr_t enumeration otherwise
  */
 static microrlr_t prv_control_char_process(microrl_t* mrl, char ch) {
-    switch (ch) {
+    mrl->signal = ch;
+
+	switch (ch) {
         case MICRORL_ESC_ANSI_HT: {
 #if MICRORL_CFG_USE_COMPLETE
             if (mrl->get_completion_fn == NULL) {
@@ -1015,9 +1017,13 @@ static microrlr_t prv_control_char_process(microrl_t* mrl, char ch) {
 #endif /* MICRORL_CFG_USE_CTRL_C */
             break;
         }
-        default:
-            break;
-    }
+		default: {
+			if (mrl->sigint_fn == NULL) {
+				return microrlERRPAR;
+			}
+			mrl->sigint_fn(mrl);
+		}
+	}
 
     return microrlOK;
 }
