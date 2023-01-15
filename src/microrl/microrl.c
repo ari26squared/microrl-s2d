@@ -1046,7 +1046,6 @@ static microrlr_t prv_insert_char(microrl_t* mrl, char ch) {
             nch[0] = MICRORL_CFG_ECHO_OFF_MASK;
         }
 #endif /* MICRORL_CFG_USE_ECHO_OFF */
-        mrl->out_fn(mrl, nch);
     } else {
         prv_terminal_print_line(mrl, mrl->cursor - 1, 0);
     }
