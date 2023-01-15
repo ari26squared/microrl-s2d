@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v2.56.0-s2d
+
+1.  Added compatibility to S2D Shell
+
 ## Develop
 
 1.  Move `inline` keyword setting to config file
