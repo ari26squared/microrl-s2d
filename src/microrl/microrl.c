@@ -36,6 +36,7 @@
 
 #define IS_CONTROL_CHAR(x)                  ((x) <= MICRORL_ESC_ANSI_US || (x) == MICRORL_ESC_ANSI_DEL)
 
+#ifndef MICRORL_ESC_EXPORTED
 /**
  * \brief           List of ANSI escape codes
  */
@@ -48,14 +49,14 @@ typedef enum {
     MICRORL_ESC_ANSI_ENQ = 0x05,                    /*!< ^E Enquiry, goes with ACK; old HP flow control */
     MICRORL_ESC_ANSI_ACK = 0x06,                    /*!< ^F Acknowledge, clears ENQ logon hand */
     MICRORL_ESC_ANSI_BEL = 0x07,                    /*!< ^G Bell, rings the bell... */
-    MICRORL_ESC_ANSI_BS = 0x08,                     /*!< ^H Backspace, works on HP terminals/computers */
-    MICRORL_ESC_ANSI_HT = 0x09,                     /*!< ^I Horizontal tab, move to next tab stop */
-    MICRORL_ESC_ANSI_LF = 0x0A,                     /*!< ^J Line Feed */
-    MICRORL_ESC_ANSI_VT = 0x0B,                     /*!< ^K Vertical tab */
-    MICRORL_ESC_ANSI_FF = 0x0C,                     /*!< ^L Form Feed, page eject */
-    MICRORL_ESC_ANSI_CR = 0x0D,                     /*!< ^M Carriage Return */
-    MICRORL_ESC_ANSI_SO = 0x0E,                     /*!< ^N Shift Out, alternate character set */
-    MICRORL_ESC_ANSI_SI = 0x0F,                     /*!< ^O Shift In, resume defaultn character set */
+    MICRORL_ESC_ANSI_BS  = 0x08,                    /*!< ^H Backspace, works on HP terminals/computers */
+    MICRORL_ESC_ANSI_HT  = 0x09,                    /*!< ^I Horizontal tab, move to next tab stop */
+    MICRORL_ESC_ANSI_LF  = 0x0A,                    /*!< ^J Line Feed */
+    MICRORL_ESC_ANSI_VT  = 0x0B,                    /*!< ^K Vertical tab */
+    MICRORL_ESC_ANSI_FF  = 0x0C,                    /*!< ^L Form Feed, page eject */
+    MICRORL_ESC_ANSI_CR  = 0x0D,                    /*!< ^M Carriage Return */
+    MICRORL_ESC_ANSI_SO  = 0x0E,                    /*!< ^N Shift Out, alternate character set */
+    MICRORL_ESC_ANSI_SI  = 0x0F,                    /*!< ^O Shift In, resume defaultn character set */
     MICRORL_ESC_ANSI_DLE = 0x10,                    /*!< ^P Data link escape */
     MICRORL_ESC_ANSI_DC1 = 0x11,                    /*!< ^Q XON, with XOFF to pause listings; "okay to send". */
     MICRORL_ESC_ANSI_DC2 = 0x12,                    /*!< ^R Device control 2, block-mode flow control */
@@ -65,16 +66,18 @@ typedef enum {
     MICRORL_ESC_ANSI_SYN = 0x16,                    /*!< ^V Synchronous idle */
     MICRORL_ESC_ANSI_ETB = 0x17,                    /*!< ^W End transmission block, not the same as EOT */
     MICRORL_ESC_ANSI_CAN = 0x18,                    /*!< ^X Cancel line, MPE echoes !!! */
-    MICRORL_ESC_ANSI_EM = 0x19,                     /*!< ^Y End of medium, Control-Y interrupt */
+    MICRORL_ESC_ANSI_EM  = 0x19,                    /*!< ^Y End of medium, Control-Y interrupt */
     MICRORL_ESC_ANSI_SUB = 0x1A,                    /*!< ^Z Substitute */
     MICRORL_ESC_ANSI_ESC = 0x1B,                    /*!< ^[ Escape, next character is not echoed */
-    MICRORL_ESC_ANSI_FS = 0x1C,                     /*!< ^\ File separator */
-    MICRORL_ESC_ANSI_GS = 0x1D,                     /*!< ^] Group separator */
-    MICRORL_ESC_ANSI_RS = 0x1E,                     /*!< ^^ Record separator, block-mode terminator */
-    MICRORL_ESC_ANSI_US = 0x1F,                     /*!< ^_ Unit separator */
+    MICRORL_ESC_ANSI_FS  = 0x1C,                    /*!< ^\ File separator */
+    MICRORL_ESC_ANSI_GS  = 0x1D,                    /*!< ^] Group separator */
+    MICRORL_ESC_ANSI_RS  = 0x1E,                    /*!< ^^ Record separator, block-mode terminator */
+    MICRORL_ESC_ANSI_US  = 0x1F,                    /*!< ^_ Unit separator */
 
     MICRORL_ESC_ANSI_DEL = 0x7F                     /*!< Delete (not a real control character...) */
 } microrl_esc_ansi_t;
+
+#endif // MICRORL_ESC_EXPORTED
 
 /**
  * \brief           History ring buffer memory status
