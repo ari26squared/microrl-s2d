@@ -6,6 +6,7 @@
 /*
  * Portion Copyright (c) 2011 Eugene SAMOYLOV
  * Portion Copyright (c) 2021 Dmitry KARASEV
+ * Portion Copyright (c) 2023 Arianna RODRIGUEZ
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +24,8 @@
  *
  * Authors:         Eugene SAMOYLOV aka Helius <ghelius@gmail.com>,
  *                  Dmitry KARASEV <karasevsdmitry@yandex.ru>
- * Version:         2.5.0-dev
+ *                  Arianna RODRIGUEZ <ari.rod.python21@gmail.com>
+ * Version:         2.6.0-s2d
  */
 
 #include <stdint.h>
