@@ -119,7 +119,7 @@ typedef struct microrl_hist_rbuf {
  * \return          The number of characters that would have been written,
  *                      not counting the terminating null character.
  */
-typedef int       (*microrl_output_fn)(struct microrl* mrl, const char* str);
+typedef int32_t       (*microrl_output_fn)(struct microrl* mrl, ...);
 
 /**
  * \brief           Command execute callback function 
@@ -128,7 +128,7 @@ typedef int       (*microrl_output_fn)(struct microrl* mrl, const char* str);
  * \param[in]       argv: pointer array to token string
  * \return          '0' on success, '1' otherwise
  */
-typedef int       (*microrl_exec_fn)(struct microrl* mrl, int argc, const char* const *argv);
+typedef int32_t       (*microrl_exec_fn)(struct microrl* mrl, int argc, const char* const *argv);
 
 /**
  * \brief           Auto-complete function prototype
