@@ -1,7 +1,7 @@
 # Changelog
 
 
-## v2.56.0-s2d
+## v2.6.0-s2d
 
 1.  Added compatibility to S2D Shell
 
